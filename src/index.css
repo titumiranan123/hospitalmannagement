@@ -1,8 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .font-play {
   font-family: "Playfair Display";
+}
+.font-poppins {
+  font-family: "Poppins";
+}
+
+.swiper {
+  height: 350px !important;
+}
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  height: 10px !important;
+  border-radius: 10px !important;
+}
+.swiper-pagination-horizontal {
+  display: flex !important;
+  justify-content: center;
+}
+.swiper-button-prev {
+  border: 1px solid #2379f9 !important;
+  padding: 15px !important;
+  border-radius: 4px !important;
+}
+.swiper-button-next {
+  border: 1px solid #2379f9 !important;
+  padding: 15px !important;
+  border-radius: 4px !important;
+}
+:root {
+  --swiper-navigation-size: 22px !important;
 }

@@ -10,11 +10,11 @@ import img from "../../assets/testimonialman.png";
 import comma from "../../assets/comma.png";
 const Testimonial: React.FC = () => {
   return (
-    <div>
+    <div className="mt-[130px]">
       <div>
         <Heading title="TESTIMONIAL" description="What Our Patients Say" />
       </div>
-      <div>
+      <div className="mt-20">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -29,19 +29,15 @@ const Testimonial: React.FC = () => {
           {testimonialData.map((data) => (
             <div key={data.name}>
               <SwiperSlide>
-                <TestimonialCard description="hello" />
+                <TestimonialCard
+                  description={data.description}
+                  img={data.img}
+                  name={data.name}
+                  designation={data.designation}
+                />
               </SwiperSlide>
             </div>
           ))}
-
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
         </Swiper>
       </div>
     </div>
@@ -52,13 +48,33 @@ export default Testimonial;
 
 interface testimonialProp {
   description: string;
+  img: string;
+  name: string;
+  designation: string;
 }
-const TestimonialCard: React.FC<testimonialProp> = ({ description }) => {
+const TestimonialCard: React.FC<testimonialProp> = ({
+  description,
+  img,
+  name,
+  designation,
+}) => {
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center  h-[320px]">
       <img src={comma} alt="" />
-      <p>{description}</p>
-      <div className=""></div>
+      <p className="text-[#07003B] mt-[18px] text-opacity-75 text-[18px] leading-[27px] font-poppins">
+        {description?.split("\n").map((line, idx) => (
+          <p key={idx}>{line}</p>
+        ))}
+      </p>
+      <div className="flex justify-center items-center flex-col mt-12">
+        <img src={img} alt="" />
+        <p className="text-[30px] font-bold font-play text-center text-[#1C3C70]">
+          {name}
+        </p>
+        <p className="text-[#1C3C70] text-center text-[16px] font-poppins ">
+          {designation}
+        </p>
+      </div>
       <div></div>
     </div>
   );
@@ -70,20 +86,20 @@ const testimonialData = [
     name: "Nizam Shaik",
     designation: "Assistant Teacher",
     description:
-      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team Best consultant, best service ,everything is best.",
+      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team \nBest consultant, best service ,everything is best.",
   },
   {
     img: img,
     name: "Nizam Shaik",
     designation: "Assistant Teacher",
     description:
-      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team Best consultant, best service ,everything is best.",
+      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team \nBest consultant, best service ,everything is best.",
   },
   {
     img: img,
     name: "Nizam Shaik",
     designation: "Assistant Teacher",
     description:
-      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team Best consultant, best service ,everything is best.",
+      "Best healthcare in Uttara Dhaka, Uttara Lake View Hospital team \nBest consultant, best service ,everything is best.",
   },
 ];

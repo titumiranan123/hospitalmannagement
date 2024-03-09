@@ -3,6 +3,7 @@ import Contactus from "../../component/Homecomponent/Contactus";
 import Header from "../../component/Homecomponent/Header";
 import Bookappoinment from "../../component/Homecomponent/Bookappoinment";
 import Ourdoctor from "../../component/Homecomponent/Ourdoctor";
+import Testimonial from "../../component/Homecomponent/Testimonial";
 
 const Home: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
       <Header />
       <Bookappoinment />
       <Ourdoctor />
+      <Testimonial />
       <Contactus />
     </div>
   );
